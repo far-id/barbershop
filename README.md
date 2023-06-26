@@ -17,6 +17,10 @@ buka `cmd` lalu masukkan perintah dibawah satu persatu
   git clone https://github.com/far-id/barbershop.git
   cd barbershop
   composer Install
+```
+Copy file `.env.example` lalu rubah namanya menjadi `.env`
+Kemudian ketikkan kembali perintah dibawah ke dalam `cmd`
+```bash
   php artisan key:generate
   php artisan migrate --seed
   npm install

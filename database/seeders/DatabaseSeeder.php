@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ServiceSeeder::class,
             BranchSeeder::class,
+            UserSeeder::class
         ]);
-
         \App\Models\User::factory()->count(20)->create();
 
         $serivces = array_column(\App\Models\Service::select('id')->get()->toArray(), 'id');

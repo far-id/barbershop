@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import Authentication from '@/Layouts/AuthenticationLayout';
 
-export default function Register() {
+function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         email: '',
@@ -27,7 +27,7 @@ export default function Register() {
     };
 
     return (
-        <GuestLayout>
+        <>
             <Head title="Register" />
 
             <form onSubmit={submit}>
@@ -112,6 +112,9 @@ export default function Register() {
                     </PrimaryButton>
                 </div>
             </form>
-        </GuestLayout>
+        </>
     );
 }
+
+Register.layout = (page) => <Authentication children={ page } />;
+export default Register;

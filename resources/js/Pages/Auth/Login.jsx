@@ -1,13 +1,9 @@
-import { useEffect } from 'react';
-import Checkbox from '@/Components/Checkbox';
-import GuestLayout from '@/Layouts/GuestLayout';
+import React, { useEffect } from 'react';
+import { Link, useForm } from '@inertiajs/react';
+import '../../../css/login.css';
 import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Head, Link, useForm } from '@inertiajs/react';
 
-export default function Login({ status, canResetPassword }) {
+function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
@@ -25,73 +21,66 @@ export default function Login({ status, canResetPassword }) {
 
         post(route('login'));
     };
-
     return (
-        <GuestLayout>
-            <Head title="Log in" />
+        <>
+            <section>
+                <div className="form-box">
+                    <div className="form-value">
 
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+                        <form onSubmit={ submit }>
+                            <h2>Login</h2>
+                            { errors.email && (<p className="font-danger">{ errors.email }</p>) }
+                            <div className="inputbox">
+                                <ion-icon name="mail-outline" />
+                                <input
+                                    id="email"
+                                    type="email"
+                                    name="email"
+                                    value={ data.email }
+                                    className="block w-full mt-1"
+                                    autoComplete="username"
+                                    onChange={ (e) => setData('email', e.target.value) }
+                                    autoFocus={ true }
+                                    required />
+                                <label htmlFor="email">Email</label>
 
-            <form onSubmit={submit}>
-                <div>
-                    <InputLabel htmlFor="email" value="Email" />
-
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        onChange={(e) => setData('email', e.target.value)}
-                    />
-
-                    <InputError message={errors.email} className="mt-2" />
+                            </div>
+                            <div className="inputbox">
+                                <ion-icon name="lock-closed-outline" />
+                                <input
+                                    id="password"
+                                    type="password"
+                                    name="password"
+                                    value={ data.password }
+                                    className="block w-full mt-1"
+                                    autoComplete="current-password"
+                                    onChange={ (e) => setData('password', e.target.value) }
+                                    required />
+                                <label htmlFor="password">Password</label>
+                            </div>
+                            <div className="forget">
+                                <input
+                                    id='remember'
+                                    name="remember"
+                                    type='checkbox'
+                                    checked={ data.remember }
+                                    onChange={ (e) => setData('remember', e.target.checked) }
+                                />
+                                <label htmlFor="remember">
+                                    Remember Me &nbsp;
+                                    { canResetPassword && (
+                                        <Link href={ route('password.request') } >
+                                            Forgot your password?
+                                        </Link>
+                                    ) }
+                                </label>
+                            </div>
+                            <button disabled={ processing }>Log in</button>
+                        </form>
+                    </div>
                 </div>
-
-                <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
-
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="current-password"
-                        onChange={(e) => setData('password', e.target.value)}
-                    />
-
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
-
-                <div className="block mt-4">
-                    <label className="flex items-center">
-                        <Checkbox
-                            name="remember"
-                            checked={data.remember}
-                            onChange={(e) => setData('remember', e.target.checked)}
-                        />
-                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
-                    </label>
-                </div>
-
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
-
-                    <PrimaryButton className="ml-4" disabled={processing}>
-                        Log in
-                    </PrimaryButton>
-                </div>
-            </form>
-        </GuestLayout>
+            </section>
+        </>
     );
 }
+export default Login;

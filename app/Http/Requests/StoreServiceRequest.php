@@ -11,7 +11,7 @@ class StoreServiceRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class StoreServiceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string', 'min:3', 'max:50'],
+            'price' => ['required', 'integer'],
+            'prime' => ['required', 'boolean'],
+            'image' => request()->prime == true ? ['required', 'mimes:jpg,jpeg,png', 'max:2050', 'dimensions:ratio=3/2'] : []
         ];
     }
 }

@@ -16,19 +16,27 @@ class ServiceSeeder extends Seeder
         collect([
             [
                 'name' => 'Hair Cut',
-                'price' => 25000
+                'price' => 25000,
+                'image' => 'services/woman-cutting-hair-man-salon.jpg',
+                'prime' => true
             ],
             [
                 'name' => 'Washing',
-                'price' => 15000
+                'price' => 15000,
+                'image' => 'services/hairdresser-grooming-their-client.jpg',
+                'prime' => true
             ],
             [
                 'name' => 'Shaves',
-                'price' => 10000
+                'price' => 10000,
+                'image' => 'services/hairdresser-grooming-client.jpg',
+                'prime' => true
             ],
             [
                 'name' => 'Kids',
-                'price' => 20000
+                'price' => 20000,
+                'image' => 'services/boy-getting-haircut-salon-front-view.jpg',
+                'prime' => true
             ],
         ])->each(fn ($service) => Service::create($service));
     }

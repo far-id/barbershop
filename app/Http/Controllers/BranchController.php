@@ -14,7 +14,8 @@ class BranchController extends Controller
      */
     public function index()
     {
-        //
+        $branches = Branch::orderBy('name')->get();
+        return inertia('Admin/Branch/Index', compact('branches'));
     }
 
     /**
@@ -22,7 +23,7 @@ class BranchController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Admin/Branch/Create');
     }
 
     /**
@@ -30,15 +31,8 @@ class BranchController extends Controller
      */
     public function store(StoreBranchRequest $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Branch $branch)
-    {
-        //
+        Branch::create($request->validated());
+        return redirect()->route('branches.index');
     }
 
     /**
@@ -46,7 +40,7 @@ class BranchController extends Controller
      */
     public function edit(Branch $branch)
     {
-        //
+        return inertia('Admin/Branch/Edit', compact('branch'));
     }
 
     /**
@@ -54,7 +48,8 @@ class BranchController extends Controller
      */
     public function update(UpdateBranchRequest $request, Branch $branch)
     {
-        //
+        $branch->update($request->validated());
+        return redirect()->route('branches.index');
     }
 
     /**
@@ -62,6 +57,7 @@ class BranchController extends Controller
      */
     public function destroy(Branch $branch)
     {
-        //
+        $branch->delete();
+        return back();
     }
 }

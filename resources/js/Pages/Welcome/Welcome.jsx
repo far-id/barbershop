@@ -1,12 +1,15 @@
 import Nav from './Partials/Nav';
 import Services from './Partials/Services';
 
-import '@/bootstrap.min.js';
+import '../../bootstrap.min.js';
 import '../../../css/bootstrap.min.css';
 import '../../../css/bootstrap-icons.css';
 import '../../../css/barbershop.css';
+import Booking from './Partials/Booking';
+import PriceList from './Partials/PriceList';
+import Branches from './Partials/Branches';
 
-export default function Welcome({ services }) {
+export default function Welcome({ services, branches }) {
     const navItems = [
         {
             to: 'home_section',
@@ -133,98 +136,11 @@ export default function Welcome({ services }) {
                     <Services { ...{ services } } />
                     {/* Booking */ }
                     <section className="booking-section section-padding" id="booking_section">
-                        <div className="container">
-                            <div className="row">
-                                <div className="mx-auto col-lg-10 col-12">
-                                    <form action="#" method="post" className="custom-form booking-form" id="bb-booking-form" role="form">
-                                        <div className="mb-5 text-center">
-                                            <h2 className="mb-1">Book a seat</h2>
-                                            <p>Please fill out the form and we get back to you</p>
-                                        </div>
-                                        <div className="booking-form-body">
-                                            <div className="row">
-                                                <div className="col-lg-6 col-12">
-                                                    <input type="text" name="bb-name" id="bb-name" className="form-control" placeholder="Full name" required />
-                                                </div>
-                                                <div className="col-lg-6 col-12">
-                                                    <input type="radio" id="Adult" name="usia" defaultValue={ 1 } className="form-check-input" />
-                                                    <label htmlFor="Adult">Adult</label><br />
-                                                    <input type="radio" id="Kids" name="usia" defaultValue={ 2 } className="form-check-input" />
-                                                    <label htmlFor="Kids">Kids </label>
-                                                </div>
-                                                <div className="col-lg-6 col-12">
-                                                    <input type="email" className="form-control" name="email" placeholder="email" required />
-                                                </div>
-                                                <div className="col-lg-6 col-12">
-                                                    <input className="form-control" type="time" name="bb-time" defaultValue="18:30" />
-                                                </div>
-                                                <div className="col-lg-6 col-12">
-                                                    <select className="form-select form-control" name="bb-branch" id="bb-branch">
-                                                        <option defaultChecked >Select Branches</option>
-                                                        <option value="Grünberger">Ciracas</option>
-                                                        <option value="Behrenstraße">Cibubur</option>
-                                                        <option value="Weinbergsweg">Condet</option>
-                                                    </select>
-                                                </div>
-                                                <div className="col-lg-6 col-12">
-                                                    <input type="date" name="bb-date" id="bb-date" className="form-control" placeholder="Date" required />
-                                                </div>
-                                                <div className="col-lg-6 col-12">
-                                                    <input type="number" name="bb-number" id="bb-number" className="form-control" placeholder="Number of People" required />
-                                                </div>
-                                            </div>
-                                            <textarea name="bb-message" rows={ 3 } className="form-control" id="bb-message" placeholder="Comment (Optionals)" defaultValue={ "" } />
-                                            <div className="mx-auto col-lg-4 col-md-10 col-8">
-                                                <button type="submit" className="form-control">Submit</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                        <Booking { ...{ branches, services } } />
                     </section>
                     {/* Prices */ }
                     <section className="price-list-section section-padding" id="price_section">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-8 col-12">
-                                    <div className="price-list-thumb-wrap">
-                                        <div className="mb-4">
-                                            <h2 className="mb-2">Price List</h2>
-                                            <strong>Starting at 10k</strong>
-                                        </div>
-                                        <div className="price-list-thumb">
-                                            <h6 className="d-flex"> Haircut <span className="price-list-thumb-divider" />
-                                                <strong>25k</strong>
-                                            </h6>
-                                        </div>
-                                        <div className="price-list-thumb">
-                                            <h6 className="d-flex"> Beard Trim <span className="price-list-thumb-divider" />
-                                                <strong>20k</strong>
-                                            </h6>
-                                        </div>
-                                        <div className="price-list-thumb">
-                                            <h6 className="d-flex"> Razor Cut <span className="price-list-thumb-divider" />
-                                                <strong>30k</strong>
-                                            </h6>
-                                        </div>
-                                        <div className="price-list-thumb">
-                                            <h6 className="d-flex"> Shaves <span className="price-list-thumb-divider" />
-                                                <strong>10k</strong>
-                                            </h6>
-                                        </div>
-                                        <div className="price-list-thumb">
-                                            <h6 className="d-flex"> Styling / Color <span className="price-list-thumb-divider" />
-                                                <strong>35k</strong>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="pt-3 mt-5 mb-5 col-lg-4 col-12 custom-block-bg-overlay-wrap mb-lg-0 mt-lg-0 pt-lg-0">
-                                    <img src="images/vintage-chair-barbershop.jpg" className="custom-block-bg-overlay-image img-fluid" />
-                                </div>
-                            </div>
-                        </div>
+                        <PriceList { ...{ services } } />
                     </section>
                     {/* Contact */ }
                     <section className="contact-section" id="contact_section">
@@ -310,29 +226,7 @@ export default function Welcome({ services }) {
                         </div>
                     </section>
                     <footer className="site-footer">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-12 col-12">
-                                    <h4 className="mb-4 site-footer-title">Our Branches</h4>
-                                </div>
-                                <div className="col-lg-4 col-md-6 col-11">
-                                    <div className="site-footer-thumb">
-                                        <strong className="mb-1">Ciracas</strong>
-                                        <p>Jl. Pengantin Ali No.12, Kec. Ciracas, Kota Jakarta Timur.</p>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-6 col-11">
-                                    <div className="site-footer-thumb">
-                                        <strong className="mb-1">Cibubur</strong>
-                                        <p>Jl. Lap. Tembak No.7, Kec. Ciracas, Kota Jakarta Timur.</p>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-6 col-11">
-                                    <strong className="mb-1">Condet</strong>
-                                    <p>Jl. Raya Condet No.4, Kec. Kramat jati, Kota Jakarta Timur.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <Branches { ...{ branches } } />
                         {/* footer */ }
                         <div className="site-footer-bottom">
                             <div className="container">

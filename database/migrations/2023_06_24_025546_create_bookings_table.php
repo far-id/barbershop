@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->time('arrival_time');
             $table->date('arrival_date');
+            $table->text('comment')->nullable();
             $table->integer('total_price');
             $table->string('status'); // [queue, progress,finished, canceled]
             $table->foreignIdFor(Branch::class);

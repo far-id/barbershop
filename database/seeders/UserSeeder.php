@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+        
         collect([
             [
                 'name' => 'Farid Rizky Wijaya',

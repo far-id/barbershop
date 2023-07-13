@@ -19,7 +19,8 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', LandingController::class);
+Route::get('/', [LandingController::class, 'index']);
+Route::post('/booking', [LandingController::class, 'create'])->name('booking');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware('auth')->name('dashboard');

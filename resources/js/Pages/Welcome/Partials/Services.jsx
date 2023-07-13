@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Services({ services }) {
-    console.log(services);
     return (
         <section className="services-section section-padding" id="services_section">
             <div className="container">
@@ -9,7 +8,7 @@ export default function Services({ services }) {
                     <div className="col-lg-12 col-12">
                         <h2 className="mb-5">Services</h2>
                     </div>
-                    { services.map((service, k) => (
+                    { services.filter((service) => service.prime == true).map((service, k) => (
                         <div className="mb-4 col-lg-6 col-12" key={ k }>
                             <div className="services-thumb">
                                 <img src={ `storage/${service.image}` } className="services-image img-fluid" />

@@ -22,8 +22,10 @@ class Booking extends Model
         'booking_id',
         'name',
         'email',
+        'branch_id',
         'arrival_time',
         'arrival_date',
+        'comment',
         'total_price',
         'status',
     ];
@@ -39,6 +41,7 @@ class Booking extends Model
     /**
      * belongsTo relationship to Branch class
      *
+     
      * @return belongsTo
      */
     public function branch(): BelongsTo

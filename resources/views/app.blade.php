@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scrollbar scrollbar-thumb-indigo-400 scrollbar-w-1 scrollbar-track-gray-200 scrollbar-track-rounded-full">
 
 <head>
     <meta charset="utf-8">
@@ -19,7 +19,7 @@
     @inertiaHead
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans antialiased m-0" >
     @inertia
 </body>
 

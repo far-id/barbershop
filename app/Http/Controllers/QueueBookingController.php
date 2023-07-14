@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreBookingRequest;
-use App\Http\Requests\UpdateBookingRequest;
 use Illuminate\Http\Request;
 
 class QueueBookingController extends Controller
@@ -18,7 +16,7 @@ class QueueBookingController extends Controller
         $booking->update([
             'status' => $request->status
         ]);
-        return back();
+        return redirect()->route('queues.index');
     }
     /**
      * Display a listing of the resource.
@@ -33,7 +31,7 @@ class QueueBookingController extends Controller
         ->get();
 
         $serves = Booking::with('services')
-        ->where('status',  'sering')
+            ->where('status',  'serving')
         ->where('arrival_date', now()->format('Y-m-d'))
         ->orderBy('arrival_time')
         ->orderBy('booking_id')

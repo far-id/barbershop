@@ -22,7 +22,10 @@ class UpdateEmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string', 'min:3', 'max:100'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'address' => ['required', 'string', 'min:3'],
+            'branch' => ['required', 'integer', 'exists:branches,id']
         ];
     }
 }

@@ -1,13 +1,11 @@
 <?php
 
-use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QueueBookingController;
 use App\Http\Controllers\ServiceController;
-use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -33,8 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('bookings', BookingController::class);
-    Route::resource('queues', QueueBookingController::class);
+    Route::get('queues', [QueueBookingController::class, 'index'])->name('queues.index');
     Route::put('/queues/status/{booking:id}', [QueueBookingController::class, 'status'])->name('queue.status');
 
     Route::middleware('admin')->group(function () {

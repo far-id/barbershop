@@ -52,9 +52,9 @@ function Index({ queues: data, serves }) {
     return (
         <>
             <Head title='Branches' />
-            <div className='block md:flex justify-between w-full gap-x-4'>
+            <div className='block md:flex justify-between w-full gap-x-4 md:overflow-x-auto scrollbar scrollbar-thumb-indigo-400 scrollbar-h-1 scrollbar-track-gray-200 scrollbar-track-rounded-full'>
                 { serves.map((serve, k) => (
-                    <Card className='mb-3 md:mb-0' key={ k }>
+                    <Card className='mb-3 md:mb-0 min-w-fit' key={ k }>
                         <div className='flex justify-between items-center w-full gap-x-14'>
                             <span>
                                 { serve.booking_id }

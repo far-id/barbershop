@@ -38,7 +38,7 @@ function Index({ services: data }) {
         <>
             <Head title='Services' />
 
-            <div className="flex w-full p-3 mb-6 bg-white rounded-lg">
+            <div className="flex w-full p-3 mb-6 bg-white rounded-lg shadow-md">
                 <div className='items-center w-full'>
                     <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div className="relative">
@@ -58,7 +58,7 @@ function Index({ services: data }) {
                 </div>
             </div>
 
-            <div className='overflow-x-auto'>
+            <div className='overflow-x-auto shadow-md rounded-lg overflow-hidden'>
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>

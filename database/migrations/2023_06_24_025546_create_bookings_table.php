@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('arrival_date');
             $table->text('comment')->nullable();
             $table->integer('total_price');
-            $table->string('status'); // [queue, progress,finished, canceled]
+            $table->string('status'); // [queue, serving,finished, canceled]
             $table->foreignIdFor(Branch::class);
             $table->timestamps();
         });

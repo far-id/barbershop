@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Branch;
 use App\Models\Service;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 class LandingController extends Controller
 {
@@ -27,9 +29,12 @@ class LandingController extends Controller
             'name' => 'required|string|min:3|max:50',
             'email' => 'required|email',
             'branch' => 'required|integer|exists:branches,id',
-            'arrival_time' => 'required|date_format:H:i|after_or_equal:' . now()->format('H:i'),
+            'arrival_time' => [
+                'required', 'date_format:H:i',
+                Rule::when(fn ($input) => $input->arrival_date === now()->format('Y-m-d'), ['after_or_equal:' . now()->format('H:i')]),
+            ],
             'arrival_date' => 'required|date_format:Y-m-d|after_or_equal:' . now()->format('Y-m-d'),
-            'comment' => 'string|min:3|nullable',
+            'comment' => 'string|nullable',
             'services' => 'required|array|min:1',
         ]);
         DB::transaction(function () use ($request) {

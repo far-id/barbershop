@@ -18,7 +18,7 @@ class BookingFactory extends Factory
      */
     public function definition(): array
     {
-        $status = ['queue', 'progress', 'finished', 'canceled'];
+        $status = ['queue', 'serving', 'finished', 'canceled'];
         $date = fake()->dateTimeBetween('-7 days', '+7 days');
         return [
             'booking_id' => $date->format('dmy'),

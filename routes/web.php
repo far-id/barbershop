@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QueueBookingController;
 use App\Http\Controllers\ServiceController;
+use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -33,7 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('services', ServiceController::class);
     Route::resource('branches', BranchController::class);
     Route::resource('employees', EmployeeController::class);
-
+    Route::resource('bookings', BookingController::class);
+    Route::resource('queues', QueueBookingController::class);
+    Route::put('/queues/status/{booking:id}', [QueueBookingController::class, 'status'])->name('queue.status');
 });
 
 require __DIR__ . '/auth.php';

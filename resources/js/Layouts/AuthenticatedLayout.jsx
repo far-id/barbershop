@@ -29,15 +29,19 @@ export default function Authenticated({ header, children }) {
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Dashboard
                                 </NavLink>
-                                    <NavLink href={ route('services.index') } active={ route().current('services.*') }>
-                                        Services
-                                    </NavLink>
-                                    <NavLink href={ route('branches.index') } active={ route().current('branches.*') }>
-                                        Branches
-                                    </NavLink>
-                                    <NavLink href={ route('employees.index') } active={ route().current('employees.*') }>
-                                        Employees
-                                    </NavLink>
+                                    { user.role_id == 0 && (
+                                        <>
+                                            <NavLink href={ route('services.index') } active={ route().current('services.*') }>
+                                                Services
+                                            </NavLink>
+                                            <NavLink href={ route('branches.index') } active={ route().current('branches.*') }>
+                                                Branches
+                                            </NavLink>
+                                            <NavLink href={ route('employees.index') } active={ route().current('employees.*') }>
+                                                Employees
+                                            </NavLink>
+                                        </>
+                                    ) }
                                     <NavLink href={ route('queues.index') } active={ route().current('queues.*') }>
                                         Queues
                                     </NavLink>
@@ -112,15 +116,19 @@ export default function Authenticated({ header, children }) {
                         <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
                             Dashboard
                         </ResponsiveNavLink>
-                            <ResponsiveNavLink href={ route('services.index') } active={ route().current('services.*') }>
-                                Services
-                            </ResponsiveNavLink>
-                            <ResponsiveNavLink href={ route('branches.index') } active={ route().current('branches.*') }>
-                                Branches
-                            </ResponsiveNavLink>
-                            <ResponsiveNavLink href={ route('employees.index') } active={ route().current('employees.*') }>
-                                Employees
-                            </ResponsiveNavLink>
+                            { user.role_id == 0 && (
+                                <>
+                                    <ResponsiveNavLink href={ route('services.index') } active={ route().current('services.*') }>
+                                        Services
+                                    </ResponsiveNavLink>
+                                    <ResponsiveNavLink href={ route('branches.index') } active={ route().current('branches.*') }>
+                                        Branches
+                                    </ResponsiveNavLink>
+                                    <ResponsiveNavLink href={ route('employees.index') } active={ route().current('employees.*') }>
+                                        Employees
+                                    </ResponsiveNavLink>
+                                </>
+                            ) }
                             <ResponsiveNavLink href={ route('queues.index') } active={ route().current('queues.*') }>
                                 Queues
                             </ResponsiveNavLink>

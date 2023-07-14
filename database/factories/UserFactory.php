@@ -20,12 +20,14 @@ class UserFactory extends Factory
     {
         $employee = Employee::factory()->create();
         return [
+            
             'name' => $employee->name,
             'email' => $employee->email,
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
             'employee_id' => $employee->id,
+            'role_id' => 1,
         ];
     }
 

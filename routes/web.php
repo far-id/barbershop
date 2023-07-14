@@ -33,12 +33,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('services', ServiceController::class);
-    Route::resource('branches', BranchController::class);
-    Route::resource('employees', EmployeeController::class);
     Route::resource('bookings', BookingController::class);
     Route::resource('queues', QueueBookingController::class);
     Route::put('/queues/status/{booking:id}', [QueueBookingController::class, 'status'])->name('queue.status');
+
+    Route::middleware('admin')->group(function () {
+        Route::resource('services', ServiceController::class);
+        Route::resource('branches', BranchController::class);
+        Route::resource('employees', EmployeeController::class);
+    });
 });
 
 require __DIR__ . '/auth.php';

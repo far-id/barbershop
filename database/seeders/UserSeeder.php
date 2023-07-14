@@ -21,21 +21,21 @@ class UserSeeder extends Seeder
                 'name' => 'Farid Rizky Wijaya',
                 'email' => 'farid@mail.test',
                 'address' => fake()->address(),
-                'branch_id' => rand(1, 3)
+                'branch_id' => rand(1, 3),
             ],
             [
 
                 'name' => 'Adam Julizar',
                 'email' => 'adam@mail.test',
                 'address' => fake()->address(),
-                'branch_id' => rand(1, 3)
+                'branch_id' => rand(1, 3),
             ],
             [
 
                 'name' => 'Falentino Rusdianto',
                 'email' => 'falen@mail.test',
                 'address' => fake()->address(),
-                'branch_id' => rand(1, 3)
+                'branch_id' => rand(1, 3),
             ]
         ])->each(function ($employee) {
             $employee = Employee::create($employee);
@@ -44,8 +44,8 @@ class UserSeeder extends Seeder
                 'email' => $employee->email,
                 'email_verified_at' => now(),
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'remember_token' => Str::random(10),
-                'employee_id' => $employee->id,
+                'remember_token' => Str::random(10), 'employee_id' => $employee->id,
+                'role_id' => 0,
             ]);
         });
     }

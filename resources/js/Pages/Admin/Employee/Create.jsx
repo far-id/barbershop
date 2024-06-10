@@ -33,7 +33,7 @@ function Create({ branches }) {
     }, []);
     return (
         <>
-            <Head title='employees' />
+            <Head title='Employees' />
             <div className='p-4 m-1 bg-white rounded-lg md:w-1/2'>
                 <form className="flex flex-col w-full gap-4" onSubmit={ submit }>
                     <div>

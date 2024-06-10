@@ -13,7 +13,7 @@ class BookingSeeder extends Seeder
      */
     public function run(): void
     {
-        $bookings = collect([
+        collect([
             [
                 'booking_id' => 260623,
                 'name' => "far",

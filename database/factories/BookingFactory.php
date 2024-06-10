@@ -28,7 +28,7 @@ class BookingFactory extends Factory
             'arrival_date' => $date->format('Y-m-d'),
             'total_price' => rand(10000, 100000),
             'status' => $status[array_rand($status, 1)],
-            'branch_id' => rand(1, 3)
+            'branch_id' => 1
         ];
     }
 }

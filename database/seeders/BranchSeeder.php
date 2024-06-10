@@ -15,16 +15,8 @@ class BranchSeeder extends Seeder
     {
         collect([
             [
-                'name' => 'Ciracas',
-                'address' => 'Jl. Pengantin Ali No.12, Kec. Ciracas, Kota Jakarta Timur.'
-            ],
-            [
-                'name' => 'Cibubur',
-                'address' => 'Jl. Legenda Wisata, Cibubur, Kec. Gn. Putri, Kabupaten Bogor, Jawa Barat.'
-            ],
-            [
                 'name' => 'Condet',
-                'address' => 'Jl. Raya Condet No.4, Kec. Kramat jati, Kota Jakarta Timur..'
+                'address' => 'Jl. Al - Bariyah No.82, RT.9/RW.9, Kp. Tengah, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13540'
             ]
         ])->each(fn ($branch) => Branch::create($branch));
     }

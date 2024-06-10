@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookkeepingController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LandingController;
@@ -38,6 +39,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('services', ServiceController::class);
         Route::resource('branches', BranchController::class);
         Route::resource('employees', EmployeeController::class);
+        Route::get('/bookkeeping', [BookkeepingController::class, 'index'])->name('bookkeeping.index');
+        Route::get('/bookkeeping/export', [BookkeepingController::class, 'export'])->name('bookkeeping.export');
     });
 });
 

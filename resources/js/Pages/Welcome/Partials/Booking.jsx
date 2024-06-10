@@ -12,7 +12,7 @@ export default function Booking({ branches, services }) {
         services: [],
         arrival_time: `${new Date().getHours().toString().padStart(2, '0')}:${new Date().getMinutes().toString().padStart(2, '0')}`,
         arrival_date: currentDate.toISOString().substring(0, 10),
-        branch: '',
+        branch: branches[0].id,
         comment: '',
     });
     const changeMultiSelectHandler = (newValue) => {
@@ -27,6 +27,7 @@ export default function Booking({ branches, services }) {
 
     const submit = (e) => {
         e.preventDefault();
+        console.log(data);
         router.post(route('booking'), {
             ...data,
             services: data.services.map(service => service.value)
@@ -105,11 +106,11 @@ export default function Booking({ branches, services }) {
                                         id="branch"
                                         required
                                         name="branch"
-                                        onChange={ (e) => changeHandler(e) }
+                                        onChange={ (e) => setData('branch', e.target.value) }
                                     >
                                         { branches.map((branch, k) => (
                                             <option key={ k } value={ branch.id }>
-                                                { branch.name } ({ branch.address })
+                                                { branch.name }
                                             </option>
                                         )) }
                                     </select>
@@ -132,7 +133,6 @@ export default function Booking({ branches, services }) {
                             <textarea
                                 id="comment"
                                 name="comment"
-                                required
                                 value={ data.comment }
                                 onChange={ (e) => changeHandler(e) }
                                 rows={ 3 }

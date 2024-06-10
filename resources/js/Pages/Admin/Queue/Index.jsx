@@ -51,19 +51,19 @@ function Index({ queues: data, serves }) {
 
     return (
         <>
-            <Head title='Branches' />
-            <div className='block md:flex justify-between w-full gap-x-4 md:overflow-x-auto scrollbar scrollbar-thumb-indigo-400 scrollbar-h-1 scrollbar-track-gray-200 scrollbar-track-rounded-full'>
+            <Head title='Queue' />
+            <div className='justify-between block w-full md:flex gap-x-4 md:overflow-x-auto scrollbar scrollbar-thumb-indigo-400 scrollbar-h-1 scrollbar-track-gray-200 scrollbar-track-rounded-full'>
                 { serves.map((serve, k) => (
                     <Card className='mb-3 md:mb-0 min-w-fit' key={ k }>
-                        <div className='flex justify-between items-center w-full gap-x-14'>
+                        <div className='flex items-center justify-between w-full gap-x-14'>
                             <span>
                                 { serve.booking_id }
                             </span>
                             <p className='min-w-fit'>
                                 { serve.name }
                             </p>
-                            <button onClick={ (e) => finishServe(e, serve.id) } title='Finish The Serve' className="border hover:border-none inline-flex items-center justify-center transition-all ease-in duration-75 overflow-hidden text-lg font-medium text-gray-900 rounded-full group hover:bg-gradient-to-br hover:from-blue-600 hover:to-green-400 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-                                <span className="relative px-4 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-full group-hover:bg-opacity-0">
+                            <button onClick={ (e) => finishServe(e, serve.id) } title='Finish The Serve' className="inline-flex items-center justify-center overflow-hidden text-lg font-medium text-gray-900 transition-all duration-75 ease-in border rounded-full hover:border-none group hover:bg-gradient-to-br hover:from-blue-600 hover:to-green-400 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+                                <span className="relative px-4 py-2 transition-all duration-75 ease-in bg-white rounded-full dark:bg-gray-900 group-hover:bg-opacity-0">
                                     { BsCheck() }
                                 </span>
                             </button>
@@ -82,7 +82,7 @@ function Index({ queues: data, serves }) {
                                     </li>
                                 )) }
                             </ul>
-                            <div className='border-t-2 border-dashed mt-3 flex justify-between'>
+                            <div className='flex justify-between mt-3 border-t-2 border-dashed'>
                                 <span>
                                     Total:
                                 </span>
@@ -108,7 +108,7 @@ function Index({ queues: data, serves }) {
                 </div>
             </div>
 
-            <div className='overflow-x-auto shadow-md rounded-lg overflow-hidden'>
+            <div className='overflow-hidden overflow-x-auto rounded-lg shadow-md'>
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>
@@ -139,7 +139,7 @@ function Index({ queues: data, serves }) {
                                     <span className='mr-2'>{ queue.arrival_time }</span>
                                     { queue.arrival_date }
                                 </Table.Cell>
-                                <Table.Cell className='flex justify-center gap-x-2 -ml-6'>
+                                <Table.Cell className='flex justify-center -ml-6 gap-x-2'>
                                     <button onClick={ (e) => serveQueue(e, queue.id) } className="font-medium text-cyan-600 hover:underline dark:text-cyan-500" >
                                         Serve
                                     </button>

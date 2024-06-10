@@ -6,10 +6,13 @@ use App\Models\Service;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
-use Illuminate\Support\Facades\Storage;
+use App\Services\GoogleCloudStorageService;
 
 class ServiceController extends Controller
 {
+    public function __construct(private GoogleCloudStorageService $googleCloudStorageService)
+    {
+    }
     /**
      * Display a listing of the resource.
      */
@@ -36,8 +39,11 @@ class ServiceController extends Controller
             'name' => $request->name,
             'price' => $request->price,
             'prime' => $request->prime,
-            'image' => $request->prime == true ? $request->file('image')->store('services') : null
+            'image' => $request->prime == true
+                ? $this->googleCloudStorageService->uploadImage($request->file('image'))
+                : null
         ]);
+
         return redirect()->route('services.index');
     }
 
@@ -56,8 +62,10 @@ class ServiceController extends Controller
     {
         $image = null;
         if ($request->prime == true) {
-            $service->image !== null ? Storage::delete($service->image) : null;
-            $image = $request->file('image')->store('services');
+            $service->image !== null
+                ? $this->googleCloudStorageService->deleteImage($service->image)
+                : null;
+            $image = $this->googleCloudStorageService->uploadImage($request->file('image'));
         }
         $service->update([
             'name' => $request->name,
@@ -65,6 +73,7 @@ class ServiceController extends Controller
             'prime' => $request->prime,
             'image' => $image
         ]);
+
         return redirect()->route('services.index');
     }
 
@@ -73,8 +82,11 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        $service->image != null ? Storage::delete($service->image) : null;
+        $service->image != null
+            ? $this->googleCloudStorageService->deleteImage($service->image)
+            : null;
         $service->delete();
+
         return back();
     }
 }

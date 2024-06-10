@@ -21,7 +21,7 @@ class EmployeeFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'address' => fake()->address(),
-            'branch_id' => rand(1, 3)
+            'branch_id' => 1
         ];
     }
 }

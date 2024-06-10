@@ -11,7 +11,7 @@ export default function Services({ services }) {
                     { services.filter((service) => service.prime == true).map((service, k) => (
                         <div className="mb-4 col-lg-6 col-12" key={ k }>
                             <div className="services-thumb">
-                                <img src={ `storage/${service.image}` } className="services-image img-fluid" />
+                                <img src={ `https://storage.googleapis.com/barbershop-raplontos/${service.image}` } className="services-image img-fluid" />
                                 <div className="services-info d-flex align-items-end">
                                     <h4 className="mb-0">{ service.name }</h4>
                                     <strong className="services-thumb-price">{ service.price.slice(0, -3) }k</strong>

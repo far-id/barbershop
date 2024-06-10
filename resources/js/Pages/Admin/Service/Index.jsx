@@ -58,7 +58,7 @@ function Index({ services: data }) {
                 </div>
             </div>
 
-            <div className='overflow-x-auto shadow-md rounded-lg overflow-hidden'>
+            <div className='overflow-hidden overflow-x-auto rounded-lg shadow-md'>
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>
@@ -100,7 +100,7 @@ function Index({ services: data }) {
                                     { k + 1 }
                                 </Table.Cell>
                                 <Table.Cell>
-                                    { service.image ? (<img src={ `/storage/${service.image}` } className='w-32 rounded-3xl' alt={ service.name + " Image" } />)
+                                    { service.image ? (<img src={ `https://storage.googleapis.com/barbershop-raplontos/${service.image}` } className='w-32 rounded-3xl' alt={ service.name + " Image" } />)
                                         : (<div className='w-32 rounded-3xl'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><g id="freepik--404--inject-4"><path d="M147.68,287.64H86.83V260.17l60.85-72.34H176.8v73.9h15.09v25.91H176.8v22.48H147.68Zm0-25.91V223.89l-32.16,37.84Z" style={ { fill: '#407BFF' } } /><path d="M202.3,249.51q0-34.29,12.34-48t37.61-13.7q12.13,0,19.93,3a36.79,36.79,0,0,1,12.71,7.79,41.59,41.59,0,0,1,7.75,10.09,52.38,52.38,0,0,1,4.55,12.34,115.36,115.36,0,0,1,3.36,28q0,32.72-11.07,47.89t-38.13,15.18q-15.18,0-24.53-4.84a39.76,39.76,0,0,1-15.33-14.19q-4.35-6.64-6.77-18.17A124.33,124.33,0,0,1,202.3,249.51Zm33.14.08q0,23,4.05,31.37t11.77,8.41a12.34,12.34,0,0,0,8.82-3.57q3.74-3.57,5.5-11.28t1.76-24q0-23.94-4.06-32.19t-12.18-8.24q-8.28,0-12,8.41T235.44,249.59Z" style={ { fill: '#407BFF' } } /><path d="M371.74,287.64H310.89V260.17l60.85-72.34h29.12v73.9H416v25.91H400.86v22.48H371.74Zm0-25.91V223.89l-32.15,37.84Z" style={ { fill: '#407BFF' } } /></g></svg></div>)
 
                                     }
@@ -111,7 +111,7 @@ function Index({ services: data }) {
                                 <Table.Cell>
                                     { service.price }
                                 </Table.Cell>
-                                <Table.Cell className='flex justify-center gap-x-2 -ml-6'>
+                                <Table.Cell className='flex justify-center -ml-6 gap-x-2'>
                                     <Link
                                         className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
                                         href={ route('services.edit', service.id) }

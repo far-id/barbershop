@@ -15,11 +15,12 @@
     <!-- Scripts -->
     @routes
     @viteReactRefresh
-    @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
+    @vite('resources/js/app.jsx')
+    {{-- <script src="{{ asset('build/assets/app-b405ddd4.js') }}"></script> --}}
     @inertiaHead
 </head>
 
-<body class="font-sans antialiased m-0" >
+<body class="m-0 font-sans antialiased" >
     @inertia
 </body>
 

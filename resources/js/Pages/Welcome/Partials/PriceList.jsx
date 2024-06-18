@@ -22,7 +22,7 @@ export default function PriceList({ services }) {
                     </div>
                 </div>
                 <div className="pt-3 mt-5 mb-5 col-lg-4 col-12 custom-block-bg-overlay-wrap mb-lg-0 mt-lg-0 pt-lg-0">
-                    <img src="images/vintage-chair-barbershop.jpg" className="custom-block-bg-overlay-image img-fluid" />
+                    <img src={ `https://storage.googleapis.com/barbershop-raplontos/images/vintage-chair-barbershop.jpg` } className="custom-block-bg-overlay-image img-fluid" />
                 </div>
             </div>
         </div>

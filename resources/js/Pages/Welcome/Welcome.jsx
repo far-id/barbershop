@@ -60,7 +60,7 @@ export default function Welcome({ services, branches }) {
                             </div>
                         </div>
                         <div className="custom-block d-lg-flex flex-column justify-content-center align-items-center">
-                            <img src="images/vintage-chair-barbershop.jpg" className="custom-block-image img-fluid" />
+                            <img src={ `https://storage.googleapis.com/barbershop-raplontos/images/vintage-chair-barbershop.jpg` } className="custom-block-image img-fluid" />
                             <h4><strong className="text-white">Hurry Up! Get good haircut.</strong></h4>
                             <a href="#booking_section" className="mt-3 smoothscroll btn custom-btn custom-btn-italic">Book a
                                 seat</a>
@@ -79,7 +79,7 @@ export default function Welcome({ services, branches }) {
                                 </div>
                                 <h6 className="mb-5">Meet Babers</h6>
                                 <div className="mb-5 col-lg-5 col-12 custom-block-bg-overlay-wrap me-lg-5 mb-lg-0">
-                                    <img src="images/barber/portrait-male-hairdresser-with-scissors.jpg" className="custom-block-bg-overlay-image img-fluid" />
+                                    <img src={ `https://storage.googleapis.com/barbershop-raplontos/images/vintage-chair-barbershop.jpg` } className="custom-block-bg-overlay-image img-fluid" />
                                     <div className="flex-wrap team-info d-flex align-items-center">
                                         <p className="mb-0">Jordan</p>
                                         <ul className="social-icon ms-auto">
@@ -95,7 +95,7 @@ export default function Welcome({ services, branches }) {
                                     </div>
                                 </div>
                                 <div className="mt-4 mb-5 col-lg-5 col-12 custom-block-bg-overlay-wrap mt-lg-0 mb-lg-0">
-                                    <img src="images/barber/portrait-mid-adult-bearded-male-barber-with-folded-arms.jpg" className="custom-block-bg-overlay-image img-fluid" />
+                                    <img src={ `https://storage.googleapis.com/barbershop-raplontos/images/barber/portrait-mid-adult-bearded-male-barber-with-folded-arms.jpg` } className="custom-block-bg-overlay-image img-fluid" />
                                     <div className="flex-wrap team-info d-flex align-items-center">
                                         <p className="mb-0">Mike</p>
                                         <ul className="social-icon ms-auto">
@@ -112,10 +112,10 @@ export default function Welcome({ services, branches }) {
                                 </div>
                                 <h6 className="mt-5 mb-3">Result</h6>
                                 <div className="mt-5 mb-5 col-lg-5 col-12 custom-block-bg-overlay-wrap me-lg-5 mb-lg-0">
-                                    <video controls src="images/1.mp4" type="video/mp4" className="custom-block-bg-overlay-image img-fluid" />
+                                    <video controls src={ `https://storage.googleapis.com/barbershop-raplontos/images/1.mp4` } type="video/mp4" className="custom-block-bg-overlay-image img-fluid" />
                                 </div>
                                 <div className="mt-5 mb-5 col-lg-5 col-12 custom-block-bg-overlay-wrap me-lg-5 mb-lg-0">
-                                    <video controls src="images/2.mp4" type="video/mp4" className="custom-block-bg-overlay-image img-fluid" />
+                                    <video controls src={ `https://storage.googleapis.com/barbershop-raplontos/images/2.mp4` } type="video/mp4" className="custom-block-bg-overlay-image img-fluid" />
                                 </div>
                             </div>
                         </div>

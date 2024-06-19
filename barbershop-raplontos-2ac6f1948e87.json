@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "barbershop-raplontos",
+  "private_key_id": "2ac6f1948e87a88cb24ecb29c5ee7faf82193287",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCqK9S9k6rfE+fV\n0lQgcrqkCb3jV0lNUG9s4TvGmWazQUK1m/VgMaO5M7jvaOTnvbN4RUv9gYi2EfsK\n6lr8Fw1WxOqvUvlJjaEfn1W5rskp0dk0y7wF7hT1CJJiyVLA6YQzic5Pnow6MaV2\nGn3kC6D9Tp32N81bmho54UwJ2Ihm4CeCfaC6qBQx0BrozyRcMWvILvnof82iMKqf\nuPzMCStS9D7SirLs048ao6isxEzvNL2zGKwkl4JNlpXhCXPe9l4QK37+n5nWRF2k\n1Lk7lOsNppPnvQnIGjW9jfpo5zRbgBA2LuQzHVZlZx1fF2PSTYLA1uzEOTSquReY\nnrec8/AVAgMBAAECggEAC8xwBWM9PsF6pUVePlqzYfISokuCwlN1n6MKhIr4cddw\nQzcTP1kUZ4qfGQBY61ATPF9Hn8XGVLiwmHw7vzdE85Nsdyf7BJ8cgQdd3PrcqTjg\nGmGW1tgVSBD7qfxDRStbq8FzVmthKxwWmLaeVxGkVvPHZCh7JU2tDFQjNBqOiIgH\nTd8iRggDWTUj7KtzR4sAoLCjO4Hr/AFlrj/JfWfAdSbtiZzfYNCOKDU96Q5ONeCk\nE5jc6jl269QTvRvIeeKJ5CCvGNja7VO6Wh+qKt+zL7WIKEEpAW9UoPO162eNMkd8\nPFsRZ+d4LOFgBfA8f4Cv4JS+eNSDXOZlZxoQ1aSCQQKBgQDd8KUIqU/5jw4KZoBO\nwwD7n7Oa0MMu5d7poRUM2+prCFiYamAmZlYn9b1z1n97hX2kJOS9dwVd8JgyurZw\nvtcFKvFjkniVXeUDD3YKZt3K0Wy8L+9EhH6W4Ve9+5OYS85krXXIIvba+Qz+ZQYi\n45Dpzo3pRsPEY2TTrBi7123u1QKBgQDESViLwfvcPLqJKRG5Mv44lASrX1D3STOs\nJBf1cse/dNrLoXHSsv34YXvHqczp2pIccr7kVu2dSIKFqAP7hjoOIPma4hY7VFlX\n+Nl/8MjLUZIjX+Wf+L9IxuftYuHMjPQlBPnRrtmzm0Bf8j7AQmwy8FgU0wF4+Bjf\nIPZ1Z78cQQKBgEI+NnQMXSOGsFEoYPmhOKTh+PCniOpxkAQ5oRfSd/h0aEUt0v8D\nIooQzfhKOIi8wlCA9okagk6UpkjV8+hY/cK8G4p1yGoEuXsdXUUjiOWldogA4rCX\nv1T3c4HwGhCl57ejEnmm/flDxr4Tly5IsBMpJLBQ/9OZOxn2zvcaCOT1AoGBAJ08\nsBzMmUh0sWz8pED6U2HZWOA7K63cSvNjunmZp9976WVj/70sO3yEAtcP86GFwLPf\nS4G5DQGIu138GKydetYkni7vW6XNTQDGzNzLct5Eis+hm12JsxnGlLW6F213oIAj\nO0g4TBavkGMLuC7lRq2LkNOlsDFKdQoQ6r1kDVjBAoGBALiHak2igMwDCCFRIrT9\nqTG3g/HHNrafmxTk36XxsapvxIYHtYE/EfHl0TuBoQNDOfxpjDZmj/18SU446D4O\n2tZ23xjjfEDuvTBYGrpqovemKrxHsgMIUu8NtoLcAGvcnJ08ZWueVAsLW886YhYu\nmAzqn369+dWwy1LFdTf2TtrK\n-----END PRIVATE KEY-----\n",
+  "client_email": "barbershop-app@barbershop-raplontos.iam.gserviceaccount.com",
+  "client_id": "115832550854089296497",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/barbershop-app%40barbershop-raplontos.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -12,7 +12,7 @@ class GoogleCloudStorageService
     public function uploadImage(UploadedFile $file)
     {
         try {
-            $googleConfigFile = file_get_contents(base_path('barbershop-raplontos-2ac6f1948e87.json'));
+            $googleConfigFile = file_get_contents('https://storage.googleapis.com/barbershop-raplontos/barbershop-raplontos-2ac6f1948e87.json');
             $storage = new StorageClient([
                 'keyFile' => json_decode($googleConfigFile, true)
             ]);
@@ -50,7 +50,7 @@ class GoogleCloudStorageService
 
     public function deleteImage($imagePath)
     {
-        $googleConfigFile = file_get_contents(base_path('barbershop-raplontos-2ac6f1948e87.json'));
+        $googleConfigFile = file_get_contents('https://storage.googleapis.com/barbershop-raplontos/barbershop-raplontos-2ac6f1948e87.json');
         $storage = new StorageClient([
             'keyFile' => json_decode($googleConfigFile, true)
         ]);
